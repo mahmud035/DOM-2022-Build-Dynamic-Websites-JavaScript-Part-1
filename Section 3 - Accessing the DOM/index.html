@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accessing Elements</title>
+    <style>
+      body {
+        max-width: 80%;
+        margin-inline: auto;
+      }
+
+      div,
+      p {
+        padding: 0.8rem;
+        margin: 1rem 0;
+        border: 1px solid #9c9c9c;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="main">Accessing Elements</h1>
+    <!-- section 1 -->
+    <h2>Using the ID (#header)</h2>
+    <div id="header">
+      Access this by using <strong>getElementById()</strong>
+    </div>
+
+    <!-- section 2 -->
+    <h2>Using the Class (.header)</h2>
+    <div class="header">
+      1. Access this by using <strong>getElementsByClassName()</strong>
+    </div>
+    <div class="header">
+      2. Access this by using <strong>getElementsByClassName()</strong>
+    </div>
+
+    <!-- section 3 -->
+    <h2>Using the Tag (paragraph tag)</h2>
+    <p>1. Access this by using <strong>getElementsByTagName()</strong></p>
+    <p>2. Access this by using <strong>getElementsByTagName()</strong></p>
+
+    <!-- section 4 -->
+    <h2>Using the Query Selector (with ID of 'query')</h2>
+    <div id="query">
+      1. Access this by using <strong>querySelector()</strong>
+    </div>
+
+    <!-- section 5 -->
+    <h2>Using the Query Selector All (with class of 'query all')</h2>
+    <div class="query-all">
+      1. Access this by using <strong>querySelectorAll()</strong>
+    </div>
+    <div class="query-all">
+      1. Access this by using <strong>querySelectorAll()</strong>
+    </div>
+
+    <script>
+      let color = 'teal';
+
+      // 1. get element by ID
+      let header = document.getElementById('header');
+      header.style.backgroundColor = color;
+
+      // 2. get elements by class name
+      let classElements = document.getElementsByClassName('header');
+      // console.log(classElements);
+
+      for (const element of classElements) {
+        element.style.backgroundColor = color;
+      }
+
+      // 3. get elements by tag name
+      let tagElements = document.getElementsByTagName('p');
+      // console.log(tagElements);
+
+      for (const tag of tagElements) {
+        tag.style.backgroundColor = color;
+      }
+
+      // 4. get element by query selector
+      let queryElement = document.querySelector('#query');
+      queryElement.style.backgroundColor = color;
+
+      // 5. get elements by querySelectorAll
+      let queryAllElement = document.querySelectorAll('.query-all');
+      console.log(queryAllElement);
+
+      // for (const queryElement of queryAllElement) {
+      //   // console.log(queryElement);
+      //   queryElement.style.backgroundColor = color;
+      // }
+
+      // using forEach()
+      queryAllElement.forEach((queryElement) => {
+        console.log(queryElement);
+        queryElement.style.backgroundColor = color;
+      });
+    </script>
+  </body>
+</html>

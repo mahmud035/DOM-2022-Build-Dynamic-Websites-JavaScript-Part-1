@@ -1,0 +1,71 @@
+<html>
+  <head>
+    <style>
+      body {
+        text-align: center;
+      }
+      h1 {
+        color: rgb(101, 7, 239);
+      }
+      button {
+        cursor: pointer;
+        background-color: black;
+        color: white;
+        width: 300px;
+        padding: 1em;
+        margin: 0.5em;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        font-weight: 600;
+      }
+    </style>
+    <title>DOM Access</title>
+  </head>
+
+  <body>
+    <h1>Test Yourself</h1>
+    <h2>getElementsByClassName()</h2>
+    <div>
+      <button onclick="green()" class="green">
+        Click to change this to green
+      </button>
+      <button class="blue" onclick="blue()">
+        Click to change this to blue
+      </button>
+      <button class="red" onclick="red()">Click to change this to red</button>
+      <button onclick="undo()">Undo</button>
+    </div>
+    <script>
+      function green() {
+        // complete the code within here, using getElementsByClassName
+        const greenButton = document.getElementsByClassName('green')[0];
+        // console.log(greenButton);
+        greenButton.style.backgroundColor = 'green';
+      }
+
+      function blue() {
+        // complete the code within here, using getElementsByClassName
+        const blueButton = document.getElementsByClassName('blue')[0];
+        blueButton.style.backgroundColor = 'blue';
+      }
+
+      function red() {
+        // complete the code within here, using getElementsByClassName
+        const redButton = document.getElementsByClassName('red')[0];
+        redButton.style.backgroundColor = 'red';
+      }
+
+      function undo() {
+        // complete the code within here. Note: this will be different code to the other functions above.
+
+        const allButton = document.getElementsByTagName('button');
+
+        for (const button of allButton) {
+          // console.log(button);
+          button.style.backgroundColor = 'black';
+        }
+      }
+    </script>
+  </body>
+</html>
